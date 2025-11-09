@@ -1,0 +1,43 @@
+---
+title: "C1 - Introduction to Bayesian"
+format: html
+jupyter: python3
+---
+
+## Introduction:
+
+```{python}
+print('hello world')
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
