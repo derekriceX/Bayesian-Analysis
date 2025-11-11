@@ -1,5 +1,5 @@
 ---
-title: "C1 - Introduction to Bayesian"
+title: "C2 - Programming Probabilistically"
 format: html
 jupyter: python3
 ---
@@ -9,7 +9,11 @@ jupyter: python3
 :
 
 ```{python}
-
+np.random.seed(123) 
+ 
+trials = 4 
+theta_real = 0.35 # unknown value in a real experiment 
+data = pz.Binomial(n=1, p=theta_real).rvs(trials)
 ```
 
 ```{python}

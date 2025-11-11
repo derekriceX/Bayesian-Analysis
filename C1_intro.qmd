@@ -1,0 +1,169 @@
+---
+title: "C1 - Introduction to Bayesian"
+format: html
+jupyter: python3
+---
+
+## Introduction:
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt 
+import pandas as pd 
+import scipy
+
+
+```
+
+```{python}
+def prob(S, value):
+    if set(value).issubset(set(S)):
+        return len(value)/len(S)
+    else:
+        return 0
+```
+
+```{python}
+S = {'a','b','c','d','e','f'}
+
+a = 'a'
+z = 'z'
+
+```
+
+```{python}
+prob(S,a)
+```
+
+# 🧪 Quarto Formatting
+
+Here is **bold**, *italic*, `code`, and a [link](https://quarto.org).
+
+## Math
+
+Inline math: $a^2 + b^2 = c^2$
+
+Block math:
+
+$$
+E = mc^2
+$$
+
+## Code
+
+```{python}
+prob(S,z)
+```
+
+## Beta Distribution PDF 
+
+```{python}
+from scipy.stats import beta
+import numpy as np
+import matplotlib.pyplot as plt
+
+a, b = 2, 5 # beta dist. parameters 
+
+x = np.linspace(0,1,1000) # generate x-axis values 
+
+pdf = beta.pdf(x,a,b) # calculate the beta pdf 
+pdf1 = beta.pdf(x,4,5)
+pdf2 = beta.pdf(x, 5,6)
+
+plt.figure(figsize=(6,8))
+plt.plot(x,pdf, label=(f'beta a= {a}, b= {b}'))
+plt.plot(x,pdf1, label=('beta a= 4, b=5'))
+plt.plot(x,pdf2, label=('beta a=5,b=6'))
+plt.title('pdf of the beta distribution')
+plt.xlabel('x')
+plt.ylabel('density')
+plt.grid(True)
+plt.legend()
+plt.show()
+```
+
+
+## setting up a normal distribution for random sampling
+```{python}
+from scipy.stats import norm
+
+mu, se, sd, se_sd = 10,2,3,1
+
+mean = np.random.normal(mu,se)
+std_dev = np.random.normal(sd,se_sd)
+
+x = np.linspace(-10,30,1000)
+pdf = norm.pdf(x,mean,std_dev)
+
+n = 50 # number of samples
+
+plt.figure(figsize=(6,8))
+for i in range(n):
+    mean = np.random.normal(mu,se)
+    std_dev = np.random.normal(sd,se_sd)
+    pdf = norm.pdf(x,mean,std_dev)
+    plt.plot(x,pdf,label=(f'mean = {mean}, std dev = {std_dev}'))
+plt.title(f'\nPDF of a Normal Distribution from {n} samples')
+plt.xlabel('x')
+plt.ylabel('density')
+plt.grid('True')
+plt.show()
+```
+
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+# Load the image
+img = mpimg.imread(r'D:\Dropbox\1e_Bayesian_Analysis\Bayesian-Analysis\Bayes_theorem.png')  
+
+
+# Display the image
+plt.imshow(img)
+plt.axis('off')  # Optional: turns off axis
+plt.show()
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+
+
+```
+
+```{python}
+
+```
+
+
+
+```{python}
+
+```
+
+
+```{python}
+
+```
+
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+```{python}
+
+```
+
+
+```{python}
+
+```
